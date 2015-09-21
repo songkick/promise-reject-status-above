@@ -1,0 +1,23 @@
+{
+  "name": "promise-reject-status-above",
+  "version": "0.0.0",
+  "description": "Rejects a promise returned by fetch() if status above threshold",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/songkick/promise-reject-status-above.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "tap test.js"
+  },
+  "keywords": [
+    "promise",
+    "fetch",
+    "async"
+  ],
+  "author": "Arnaud Rinquin",
+  "license": "MIT",
+  "devDependencies": {
+    "tap": "^1.4.1"
+  }
+}
