@@ -1,6 +1,6 @@
 {
   "name": "promise-reject-status-above",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Rejects a promise returned by fetch() if status above threshold",
   "repository": {
     "type": "git",

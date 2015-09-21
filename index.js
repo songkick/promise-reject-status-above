@@ -16,6 +16,7 @@ var rejectStatusAbove = factory(function (fn, settings) {
     function executor(resolve, reject) {
 
         return fn()
+            .catch(reject)
             .then(function(response){
                 if (response.status < settings.status) {
                     resolve(response);

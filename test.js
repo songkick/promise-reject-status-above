@@ -59,3 +59,23 @@ tap.test('rejects a Response with status above threshold', function (t) {
     });
 
 });
+
+tap.test('forward error if promise rejects', function (t) {
+
+    t.plan(1);
+
+    var expectedError = {
+        something: 'went wrong'
+    };
+
+    function willReject() {
+        return Promise.reject(expectedError);
+    }
+
+    rejectStatusAbove({status: 400})(willReject)().then(function (res) {
+        t.bailout('the promise was unexpectedly resolved');
+    }).catch(function (error) {
+        t.equal(error, expectedError, 'The promise was not reject with the original error');
+    });
+
+});
