@@ -1,4 +1,4 @@
-# promise-reject-status-above [![Build Status](https://travis-ci.org/songkick/promise-reject-status-above.svg)](https://travis-ci.org/songkick/promise-promise-reject-status-above)
+# promise-reject-status-above [![Build Status](https://travis-ci.org/songkick/promise-reject-status-above.svg)](https://travis-ci.org/songkick/promise-promise-reject-status-above) [![Code Climate](https://codeclimate.com/github/songkick/promise-reject-status-above/badges/gpa.svg)](https://codeclimate.com/github/songkick/promise-reject-status-above) [![Test Coverage](https://codeclimate.com/github/songkick/promise-reject-status-above/badges/coverage.svg)](https://codeclimate.com/github/songkick/promise-reject-status-above/coverage)
 
 Rejects a promise returned by `fetch()` if status above threshold
 
