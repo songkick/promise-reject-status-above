@@ -5,8 +5,16 @@ var factory = function (createExecutor) {
                 return new Promise(createExecutor(fn, settings));
             };
         };
-    }
+    };
 };
+
+var StatusAboveError = function (settings, fn, response) {
+    this.message = 'Response status above accepted status';
+    this.settings = settings;
+    this.fn = fn;
+    this.response = response;
+};
+StatusAboveError.prototype = Object.create(Error.prototype);
 
 var rejectStatusAbove = factory(function (fn, settings) {
     if (!settings || typeof settings.status !== 'number') {
@@ -29,13 +37,6 @@ var rejectStatusAbove = factory(function (fn, settings) {
     return executor;
 });
 
-var StatusAboveError = function (settings, fn, response) {
-    this.message = 'Response status above accepted status';
-    this.settings = settings;
-    this.fn = fn;
-    this.response = response;
-};
-StatusAboveError.prototype = Object.create(Error.prototype);
 
 rejectStatusAbove.StatusAboveError = StatusAboveError;
 

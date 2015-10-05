@@ -16,8 +16,8 @@ tap.test('throws when no settings or status specified', function (t) {
 
 function createResponse(status) {
     return {
-        status
-    }
+        status: status
+    };
 }
 
 tap.test('resolves a Response with status below threshold', function (t) {
@@ -32,7 +32,7 @@ tap.test('resolves a Response with status below threshold', function (t) {
 
     rejectStatusAbove({status: 400})(belowStatus)().then(function (result) {
         t.equal(result, response, 'result should be original promise result');
-    }).catch(function (err) {
+    }).catch(function () {
         t.bailout('the promise was unexpectedly rejected');
     });
 
@@ -48,7 +48,7 @@ tap.test('rejects a Response with status above threshold', function (t) {
         return Promise.resolve(response);
     }
 
-    rejectStatusAbove({status: 400})(aboveStatus)().then(function (res) {
+    rejectStatusAbove({status: 400})(aboveStatus)().then(function () {
         t.bailout('the promise was unexpectedly resolved');
     }).catch(function (error) {
         t.ok(error instanceof rejectStatusAbove.StatusAboveError, 'error should be instance of StatusAboveError');
@@ -72,7 +72,7 @@ tap.test('forward error if promise rejects', function (t) {
         return Promise.reject(expectedError);
     }
 
-    rejectStatusAbove({status: 400})(willReject)().then(function (res) {
+    rejectStatusAbove({status: 400})(willReject)().then(function () {
         t.bailout('the promise was unexpectedly resolved');
     }).catch(function (error) {
         t.equal(error, expectedError, 'The promise was not reject with the original error');
