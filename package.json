@@ -1,5 +1,5 @@
 {
-  "name": "promise-reject-status-above",
+  "name": "@songkick/promise-reject-status-above",
   "version": "0.0.1",
   "description": "Rejects a promise returned by fetch() if status above threshold",
   "repository": {
@@ -21,5 +21,10 @@
   "devDependencies": {
     "codeclimate-test-reporter": "^0.1.1",
     "tap": "^1.4.1"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/songkick/promise-reject-status-above/issues"
+  },
+  "homepage": "https://github.com/songkick/promise-reject-status-above",
+  "dependencies": {}
 }
