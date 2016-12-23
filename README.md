@@ -3,7 +3,7 @@
 Rejects a promise returned by `fetch()` if status above threshold
 
 ```js
-var rejectStatusAbove = require('promise-reject-status-above');
+var rejectStatusAbove = require('@songkick/promise-reject-status-above');
 var rejectAbove400 = rejectStatusAbove({status: 400});
 
 function fetch200(){
