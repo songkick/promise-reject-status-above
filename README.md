@@ -3,7 +3,7 @@
 Rejects a promise returned by `fetch()` if status above threshold
 
 ```js
-var rejectStatusAbove = require('promise-reject-status-above');
+var rejectStatusAbove = require('@songkick/promise-reject-status-above');
 var rejectAbove400 = rejectStatusAbove({status: 400});
 
 function fetch200(){
@@ -49,8 +49,8 @@ As `promise-reject-status-above` input and output is a function returning a prom
 In the example below, our `/data` API is a bit janky and might return HTTP 500 errors. We'll retry them twice before giving up.
 
 ```js
-var promiseRetry = require('promise-retry');
-var rejectStatusAbove = require('promise-reject-status-above');
+var promiseRetry = require('@songkick/promise-retry');
+var rejectStatusAbove = require('@songkick/promise-reject-status-above');
 
 var retryTwice = promiseRetry({ retries: 2 });
 var rejectAbove500 = rejectStatusAbove({status: 500});
